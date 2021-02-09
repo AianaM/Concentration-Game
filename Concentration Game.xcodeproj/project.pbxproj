@@ -11,6 +11,9 @@
 		87E8426A25D13B4A00E2577A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8426925D13B4A00E2577A /* ContentView.swift */; };
 		87E8426C25D13B4F00E2577A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E8426B25D13B4F00E2577A /* Assets.xcassets */; };
 		87E8426F25D13B4F00E2577A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E8426E25D13B4F00E2577A /* Preview Assets.xcassets */; };
+		87E8427825D13DAF00E2577A /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8427725D13DAF00E2577A /* Concentration.swift */; };
+		87E8427B25D13DD600E2577A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8427A25D13DD600E2577A /* Card.swift */; };
+		87E8427E25D13E5500E2577A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8427D25D13E5500E2577A /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		87E8426B25D13B4F00E2577A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87E8426E25D13B4F00E2577A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		87E8427025D13B4F00E2577A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87E8427725D13DAF00E2577A /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		87E8427A25D13DD600E2577A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		87E8427D25D13E5500E2577A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +60,12 @@
 			children = (
 				87E8426725D13B4A00E2577A /* Concentration_GameApp.swift */,
 				87E8426925D13B4A00E2577A /* ContentView.swift */,
+				87E8427725D13DAF00E2577A /* Concentration.swift */,
+				87E8427A25D13DD600E2577A /* Card.swift */,
 				87E8426B25D13B4F00E2577A /* Assets.xcassets */,
 				87E8427025D13B4F00E2577A /* Info.plist */,
 				87E8426D25D13B4F00E2577A /* Preview Content */,
+				87E8427D25D13E5500E2577A /* CardView.swift */,
 			);
 			path = "Concentration Game";
 			sourceTree = "<group>";
@@ -140,6 +149,9 @@
 			files = (
 				87E8426A25D13B4A00E2577A /* ContentView.swift in Sources */,
 				87E8426825D13B4A00E2577A /* Concentration_GameApp.swift in Sources */,
+				87E8427825D13DAF00E2577A /* Concentration.swift in Sources */,
+				87E8427B25D13DD600E2577A /* Card.swift in Sources */,
+				87E8427E25D13E5500E2577A /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
