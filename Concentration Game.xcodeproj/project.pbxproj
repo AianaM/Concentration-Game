@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		878CB7F425D3BA5B00D6F8BE /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CB7F325D3BA5A00D6F8BE /* WinnerView.swift */; };
 		87E8426825D13B4A00E2577A /* Concentration_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8426725D13B4A00E2577A /* Concentration_GameApp.swift */; };
 		87E8426A25D13B4A00E2577A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8426925D13B4A00E2577A /* ContentView.swift */; };
 		87E8426C25D13B4F00E2577A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E8426B25D13B4F00E2577A /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		878CB7F325D3BA5A00D6F8BE /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		87E8426425D13B4A00E2577A /* Concentration Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Concentration Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E8426725D13B4A00E2577A /* Concentration_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration_GameApp.swift; sourceTree = "<group>"; };
 		87E8426925D13B4A00E2577A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				87E8427025D13B4F00E2577A /* Info.plist */,
 				87E8426D25D13B4F00E2577A /* Preview Content */,
 				87E8427D25D13E5500E2577A /* CardView.swift */,
+				878CB7F325D3BA5A00D6F8BE /* WinnerView.swift */,
 			);
 			path = "Concentration Game";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87E8426A25D13B4A00E2577A /* ContentView.swift in Sources */,
+				878CB7F425D3BA5B00D6F8BE /* WinnerView.swift in Sources */,
 				87E8426825D13B4A00E2577A /* Concentration_GameApp.swift in Sources */,
 				87E8427825D13DAF00E2577A /* Concentration.swift in Sources */,
 				87E8427B25D13DD600E2577A /* Card.swift in Sources */,

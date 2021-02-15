@@ -10,9 +10,6 @@ import Foundation
 class Concentration {
     var cards:[Card] = []
     
-    var score = 0
-    var flippedCards:Set<Int> = []
-    
     var emoji = [
         "Animals": ["🐮", "🐔", "🐰", "🐶", "🐱", "🐭", "🐯", "🦊", "🐨", "🐼", "🐽"],
         "Food": ["🍎", "🍔", "🌭", "🍤", "🥨", "🥐", "🥗", "🍭", "🍿", "🍕"],
@@ -22,13 +19,18 @@ class Concentration {
         "Office": ["📎", "🖋", "📚", "📋", "📈", "📥", "🗂", "🗓", "📌", "✂️"]
     ]
     
-    var emoji_theme: String
-    
+    let emoji_theme: String
     var emojiCards = [Int: String]()
     
-    var choicenCard:Int?
+    var lastCardIndex: Int?
+    var flippedCard: Set<Int> = []
     
-    init(numberOfCards: Int) {
+    var score = 0
+    
+    var scoreExtra = ExtraScore()
+        
+    init() {
+        let numberOfCards = Int.random(in: 6...8)
         for _ in 1...numberOfCards {
             let card = Card(identifier: Card.getIdentifier())
             cards += [card, card]
@@ -46,42 +48,32 @@ class Concentration {
         return emojiCards[index] ?? "?"
     }
     
-    func choceCard(index: Int) -> Void {
+    func clickedCard(index: Int) -> Void {
         guard !cards[index].isFaceUp else {
             return
         }
         
         cards[index].isFaceUp = true
-
-        if (choicenCard == nil) {
-            choicenCard = index
-            
-            // close all cards
-            cards.enumerated().forEach { (cardIndex, card) in
-                if cardIndex != index {
-                    cards[cardIndex].isFaceUp = false
-                }
-            }
-        }else{
-            if cards[choicenCard!].identifier == cards[index].identifier {
-                cards[choicenCard!].isMatched = true
+        scoreExtra.flip(cardIndex: index, cardIdentifier: cards[index].identifier)
+        
+        if lastCardIndex != nil {
+            if cards[lastCardIndex!].identifier == cards[index].identifier {
+                cards[lastCardIndex!].isMatched = true
                 cards[index].isMatched = true
                 score += 2
             }else{
-                if flippedCards.contains(cards[choicenCard!].identifier){
-                    score -= 1
-                    print(flippedCards)
-                    print("1")
-                }
-                if flippedCards.contains(cards[index].identifier) {
-                    score -= 1
-                    print(flippedCards)
-                    print("2")
-                }
-                flippedCards.insert(cards[choicenCard!].identifier)
-                flippedCards.insert(cards[index].identifier)
+                score -= flippedCard.contains(cards[index].identifier) ? 1 : 0
+                score -= flippedCard.contains(cards[lastCardIndex!].identifier) ? 1 : 0
+                
+                flippedCard.insert(cards[index].identifier)
+                flippedCard.insert(cards[lastCardIndex!].identifier)
             }
-            choicenCard = nil
+            self.lastCardIndex = nil
+        }else{
+            for cardIndex in cards.indices {
+                cards[cardIndex].isFaceUp = cardIndex == index
+            }
+            self.lastCardIndex = index
         }
     }
 }
