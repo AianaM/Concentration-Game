@@ -16,13 +16,13 @@ struct CardView: View {
     var body: some View {
         Button(action: clickAction, label: {
             Text(card.isFaceUp || card.isMatched ? emoji : " ")
-                .frame(minWidth: 50, maxWidth: .infinity, minHeight: 50, maxHeight: .infinity, alignment: .center)
+                .frame(minWidth: 20, maxWidth: .infinity, minHeight: 50, maxHeight: .infinity, alignment: .center)
         })
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: Card(identifier: 1), emoji: ":-)", clickAction: {})
+        CardView(card: Card(), emoji: ":-)", clickAction: {})
     }
 }

@@ -12,8 +12,12 @@ struct Card {
     var isMatched = false
     let identifier: Int
     
-    static var identifiries = 0
-    static func getIdentifier() -> Int {
+    init() {
+        self.identifier = Card.getIdentifier()
+    }
+    
+    private static var identifiries = 0
+    private static func getIdentifier() -> Int {
         identifiries += 1
         return identifiries
     }
@@ -26,12 +30,12 @@ struct FlippedCard {
 }
 
 struct ExtraScore {
-    let startDt = Date.init()
-    var flipsLog = [FlippedCard]()
+    private let startDt = Date.init()
+    private var flipsLog = [FlippedCard]()
     var count: (flips: Int, founds: Int) = (0, 0)
     var speed: (flips: TimeInterval, founds: TimeInterval) = (0, 0)
     
-    var foundTime: TimeInterval = 0
+    private var foundTime: TimeInterval = 0
     
     var extraPoints = 0
     
@@ -58,7 +62,7 @@ struct ExtraScore {
         }
     }
     
-    mutating func stat() -> [(Int, (flips: Int, intervalsSum: TimeInterval, foundInterval: TimeInterval?))] {
+    func stat() -> [(Int, (flips: Int, intervalsSum: TimeInterval, foundInterval: TimeInterval?))] {
         var flipsStat = [Int: (flips: Int, intervalsSum: TimeInterval, foundInterval: TimeInterval?)]()
         
         for (i, flip) in flipsLog.enumerated() {
